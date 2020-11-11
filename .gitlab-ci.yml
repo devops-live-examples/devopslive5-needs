@@ -17,8 +17,6 @@ lint:
 
 linux unit tests:
   stage: test
-  needs:
-    - linux build
   script: echo Done
 
 linux e2e tests:
