@@ -1,0 +1,42 @@
+stages:
+  - build
+  - test
+  - deploy
+
+linux build:
+  stage: build
+  script: sleep 10 && echo Done
+
+mac build:
+  stage: build
+  script: sleep 20 && echo Done
+
+lint:
+  stage: test
+  script: echo Done
+
+linux unit tests:
+  stage: test
+  needs:
+    - linux build
+  script: echo Done
+
+linux e2e tests:
+  stage: test
+  script: sleep 10 && echo Done
+
+mac unit tests:
+  stage: test
+  script: sleep 5 && echo Done
+
+mac e2e tests:
+  stage: test
+  script: sleep 30 && echo Done
+
+release linux:
+  stage: deploy
+  script: "echo Done"
+
+release mac:
+  stage: deploy
+  script: "echo Done"
